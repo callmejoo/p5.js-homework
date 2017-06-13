@@ -1,18 +1,16 @@
 // 全局变量
+var rect
 var ball
-var cross
-var coolDown = 0
 var MAX_BALL_NUM = 1000
 var bally, ballx, mousey, mousex
-var distance = {
-  x: null,
-  y: null
-}
-var hit = false
-var hit2 = false
+var mic
 
 function setup () {
-  createCanvas(1000, 500)
+  createCanvas(800, 600)
+
+  // 初始化
+  mic = new p5.AudioIn()
+  mic.start()
   noStroke()
   rectMode(CORNER)
   ball = new Ball(width / 5, (height - height / 3), 100)
@@ -23,7 +21,7 @@ function setup () {
   bally = document.getElementById('bally')
 }
 
-function draw () {
+function draw() {
   background(0)
   push()
   ball.render()
@@ -71,41 +69,6 @@ function bong() {
     pop()
     hit2 = collideRectCircle(cross.ppos.x, 10, cross.ppos.y, cross.size, ball.pos.x, ball.pos.y, 100)  
     if (hit || hit2) console.log('撞了')
-
-//   if (ball.pos.x < cross.ppos.x) {
-//     distance.x = cross.ppos.x - ball.pos.x - ball.size / 2
-//     if (distance.x <= 0) {
-//       console.log('碰撞', '左', distance.x)
-//     }
-//   }
-//   if (ball.pos.x > cross.ppos.x) {
-//     distance.x = ball.pos.x - cross.ppos.x - ball.size / 2
-//     if (distance.x <= 0) {
-//       console.log('碰撞', '右', distance.x)
-//     }
-//   }
-//   if (ball.pos.y < cross.ppos.y) {
-//     distance.y = ball.console.log('上')
-//   }
-//   if (ball.pos.y > cross.ppos.y) {
-//     console.log('下')
-//   }
-
-// if (cross.ppos.x - ball.pos.x <= ball.size / 2 && ball.pos.x - cross.ppos.x <= ball.size / 2) {
-//     console.log('撞了')
-//     Math.abs(distance) = 
-//     if (cross.ppos.y + cross.size / 2 <= ball.y) {  
-//         // cross.touch = true
-//         // cross.dir = false
-//         // cross.speed = 100
-//     }
-// }
-// if (cross.ppos.y - ball.pos.y <= ball.size / 2 && ball.pos.y - cross.ppos.y <= ball.size / 2) {
-//     cross.touch = true
-//     cross.dir = true
-//     cross.speed = 100
-// }
-}
 
 function Ball (posX, posY, ballSize) {
   // 设置小球初始位置
