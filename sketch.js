@@ -4,6 +4,7 @@ var ball
 var MAX_BALL_NUM = 1000
 var bally, ballx, mousey, mousex
 var mic
+var coolDown
 
 function setup () {
   createCanvas(800, 600)
@@ -15,10 +16,6 @@ function setup () {
   rectMode(CORNER)
   ball = new Ball(width / 5, (height - height / 3), 100)
   cross = new Cross(0, 0, 300)
-  mousex = document.getElementById('mousex')
-  mousey = document.getElementById('mousey')
-  ballx = document.getElementById('ballx')
-  bally = document.getElementById('bally')
 }
 
 function draw() {
@@ -32,10 +29,6 @@ function draw() {
   cross.render()
   pop()
   bong()
-  ballx.innerText = Math.round(ball.pos.x)
-  bally.innerText = Math.round(ball.pos.y)
-  mousex.innerText = mouseX
-  mousey.innerText = mouseY
 }
 
 // 事件处理函数
@@ -57,19 +50,19 @@ function mousePressed () {
 
 function mouseReleased () {
   ball.dragState = false
-// ball.snakeTo(width / 5, (height - height / 3))
+  // ball.snakeTo(width / 5, (height - height / 3))
 }
 
 function bong() {
-    hit = collideRectCircle(cross.ppos.x, cross.ppos.y, 10, cross.size, ball.pos.x, ball.pos.y, 100)
-    push()
-    stroke(color(4, 120, 187))
-    noFill()
-    rect(cross.ppos.x, cross.ppos.y, 10, cross.size)
-    pop()
-    hit2 = collideRectCircle(cross.ppos.x, 10, cross.ppos.y, cross.size, ball.pos.x, ball.pos.y, 100)  
-    if (hit || hit2) console.log('撞了')
-
+  hit = collideRectCircle(cross.ppos.x, cross.ppos.y, 10, cross.size, ball.pos.x, ball.pos.y, 100)
+  push()
+  stroke(color(4, 120, 187))
+  noFill()
+  rect(cross.ppos.x, cross.ppos.y, 10, cross.size)
+  pop()
+  hit2 = collideRectCircle(cross.ppos.x, 10, cross.ppos.y, cross.size, ball.pos.x, ball.pos.y, 100)
+  if (hit || hit2) console.log('撞了')
+}
 function Ball (posX, posY, ballSize) {
   // 设置小球初始位置
   this.pos = createVector(posX, posY)
@@ -85,7 +78,7 @@ function Ball (posX, posY, ballSize) {
       this.moveTo(mouseX, mouseY)
     }
     // else {
-    //     this.snakeTo(width / 2, height / 2)
+    //     this.snakeTo(width / 5, (height - height / 3))
     // }
 
     // 定义行为
@@ -148,6 +141,7 @@ function Ball (posX, posY, ballSize) {
   this.snakeTo = function (tx, ty) {
     var target = createVector(tx, ty)
     var force = p5.Vector.sub(target, this.pos)
+    console.log(force)
     force.mult(0.05)
     var snakeForce = force.copy()
     snakeForce.mult(0.3)
