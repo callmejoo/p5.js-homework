@@ -7,8 +7,8 @@ var mic
 var coolDown
 
 function setup () {
+  bong.setVolume(1)
   createCanvas(800, 600)
-
   // 初始化
   mic = new p5.AudioIn()
   mic.start()
@@ -103,6 +103,7 @@ function Ball (posX, posY, ballSize) {
     ellipse(this.pos.x, this.pos.y, this.size)
   }
   this.bounceOnEdge = function (edge) {
+    bong.play()
     var force
     var antiVel
     var angle

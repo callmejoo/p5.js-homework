@@ -1,22 +1,40 @@
-var square
+var squares = []
 var ball
 var mic
 var backToOri
 var startRun
+var bong
+var horNum = 8
+var verNum = 5
+var squareHeight
+var squareWidth
+function preload () {
+  bong = loadSound('pong.mp3')
+}
+
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight)
   noStroke()
-
-  // 初始化录音
+  squareHeight = Math.round(height/verNum)
+  squareWidth = Math.round(width/horNum)
+  // 请求录音权限
   mic = new p5.AudioIn()
   mic.start()
 
   ball = new Ball(width/2, height/2, 50)
+  for (var i = 0; i < verNum; i++) {
+    for (var a = 0; a < horNum; a++) {
+      squares.push(new Square(squareWidth, squareHeight, a * squareWidth, i * squareHeight))
+    }
+  }
 }
 
 function draw() {
-  background(255)
-
+  background(0)
+  for (var i in squares) {
+    squares[i].init()
+    squares[i].fadeIn()
+  }
   ball.init()
   ball.update()
 }
@@ -100,6 +118,7 @@ function Ball (x, y, size) {
     this.speed.add(power)
   }
   this.bounce = function (side) {
+    bong.play()
     var power
     if (side === 'top') {
       power = createVector(0, 1)
@@ -119,6 +138,34 @@ function Ball (x, y, size) {
   }
 }
 
-function Square () {
-  
+function Square (width, height, x, y) {
+  this.color = color(random(255), random(255), random(255))
+  this.w = width
+  this.h = height
+  this.x = x
+  this.y = y
+  this.alpha = 0
+  this.isfadeIn = false
+  this.init = function () {
+    stroke(this.color)
+    // translate(0, 0)
+    fill(this.color)
+    rect(x, y, width, height)
+  }
+  this.update = function () {
+    // this.fadeIn()
+  }
+  this.ratate = function () {
+    stroke(this.color)
+    fill(this.color)
+  }
+  this.fadeIn = function () {
+    stroke(this.color)
+    // translate(0, 0)
+    if (this.alpha <= 1 ){
+      this.alpha += 0.01
+    }
+    fill(this.color, this.alpha)
+    rect(x, y, width, height)
+  }
 }
