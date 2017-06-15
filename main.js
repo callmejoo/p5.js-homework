@@ -1,19 +1,32 @@
 var squares = []
-var ball
+var ball, sidearc
+var ballSize = 50
 var mic
 var backToOri
 var startRun
 var bong
-var horNum = 8
-var verNum = 5
+var horNum = 20
+var verNum = 15
 var squareHeight
 var squareWidth
+var bg,startCircle,sideArc,bgCircle = []
+var countStart, countEnd
+
+var start = {
+  pos: {
+    x: 130,
+    y: 100
+  }
+}
 function preload () {
   bong = loadSound('pong.mp3')
+  bg = loadImage('images/bg.jpg')
+  startCircle = loadImage('images/start.png')
+  sideArc = loadImage('images/sidearc.png')
 }
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight)
+  createCanvas(960, 540)
   noStroke()
   squareHeight = Math.round(height/verNum)
   squareWidth = Math.round(width/horNum)
@@ -21,28 +34,46 @@ function setup() {
   mic = new p5.AudioIn()
   mic.start()
 
-  ball = new Ball(width/2, height/2, 50)
-  for (var i = 0; i < verNum; i++) {
-    for (var a = 0; a < horNum; a++) {
-      squares.push(new Square(squareWidth, squareHeight, a * squareWidth, i * squareHeight))
-    }
-  }
+  ball = new Ball(start.pos.x, start.pos.y, ballSize)
+  sidearc = new SideArc()
+  // for (var i = 0; i < verNum; i++) {
+  //   for (var a = 0; a < horNum; a++) {
+  //     squares.push(new Square(squareWidth, squareHeight, a * squareWidth, i * squareHeight))
+  //   }
+  // }
 }
 
 function draw() {
   background(255)
-  for (var i in squares) {
-    squares[i].init()
-    squares[i].bounce()
+  image(bg, 0, 0, 960, 540)
+  push()
+  imageMode(CENTER)
+  translate(130, 100)
+  rotate(frameCount/20)
+  image(startCircle, 0, 0, 75, 75)
+  pop()
+  push()
+  sidearc.init()
+  sidearc.update()
+  pop()
+  push()
+  for (var i = 0; i < 20; i++) {
+    bgCircle.push(new BgCircle(20, 20, 30, 50))
+    bgCircle[i].init()
   }
+
+  // for (var i in squares) {
+  //   squares[i].init()
+  //   squares[i].bounce()
+  // }
   ball.init()
   ball.update()
+
 }
 
 function mouseClicked () {
   var d = dist(mouseX, mouseY, ball.pos.x, ball.pos.y)
   if (d <= ball.size/2) {
-
   }
 }
 
@@ -54,9 +85,11 @@ function mousePressed () {
 }
 
 function mouseReleased () {
-  ball.dragState = false
-  ball.freeGo(width/2, height/2)
-  startRun = true
+  if (!startRun) {
+    ball.dragState = false
+    ball.freeGo(start.pos.x, start.pos.y)
+    startRun = true
+  }
 }
 
 function Ball (x, y, size) {
@@ -98,7 +131,7 @@ function Ball (x, y, size) {
       this.bounce('bottom')
     }
     if (startRun && !backToOri) {
-      if (collidePointCircle(width/2, height/2, this.pos.x, this.pos.y, 50)) {
+      if (collidePointCircle(start.pos.x, start.pos.y, this.pos.x, this.pos.y, ballSize)) {
         backToOri = true
       }
     }
@@ -112,7 +145,7 @@ function Ball (x, y, size) {
   this.freeGo = function (tx, ty) {
     var goal = createVector(tx, ty)
     var power = p5.Vector.sub(goal, this.pos)
-    power.mult(0.05)
+    power.mult(0.2)
     // var go = power.copy()
     // go.mult(0.3)
     this.speed.add(power)
@@ -125,9 +158,11 @@ function Ball (x, y, size) {
     } else if (side === 'bottom') {
       power = createVector(0, -1)
     } else if (side === 'left') {
-      power = createVector(1, 0)
+      power = createVector(-1, 0)
     } else if (side === 'right') {
       power = createVector(-1, 0)
+    } else if (side === 'rightTop') {
+      power = createVector(-1, 1)
     }
     var oppo = this.speed.copy()
     oppo.rotate(PI)
@@ -158,10 +193,6 @@ function Square (width, height, x, y) {
   this.update = function () {
     this.bounce()
   }
-  this.ratate = function () {
-    stroke(this.color)
-    fill(this.color)
-  }
   this.fadeIn = function () {
     stroke(this.color)
     // translate(0, 0)
@@ -172,12 +203,59 @@ function Square (width, height, x, y) {
     rect(x, y, width, height)
   }
   this.bounce = function () {
-    var hit = collideRectCircle(x,y,width,height,ball.pos.x, ball.pos.y, 50);
+    var hit = collideRectCircle(x,y,width,height,ball.pos.x, ball.pos.y, ballSize);
     if(hit && startRun) {
        this.hit = true
     }
     if (this.hit) {
       this.fadeIn()
     }
+  }
+}
+
+function SideArc () {
+  this.move = 0
+  this.isTouch = false
+  this.init = function () {
+    if (!this.isTouch) {
+      translate(width-120, 0)
+      image(sideArc,0,0, 120, 120)
+    }
+  }
+  this.update = function () {
+    stroke(ball.color)
+    fill(ball.color)
+    var hit = collideCircleCircle(ball.pos.x, ball.pos.y, ballSize, width, 0, 240)
+    if (hit) {
+      ball.bounce('rightTop')
+      this.isTouch = true
+      countStart = frameCount
+    }
+    if (this.isTouch) {
+      this.touch()
+    }
+  }
+  this.touch = function () {
+    translate(width-115, -5)
+    image(sideArc, 0, 0, 120, 120)
+    countEnd = frameCount
+    if (countEnd - countStart > 5) {
+      this.isTouch = false
+    }
+  }
+}
+
+function BgCircle (startX, startY, endX, endY) {
+  this.color1 = color(252, 213, 140)
+  this.color2 = color(252, 162, 134)
+  this.color =  random(2) > 1 ? this.color1 : this.color2
+  this.size = random(5, 15)
+  this.x = random(5)
+  this.y = random(5)
+  this.init = function () {
+    translate(startX, startY)
+    stroke(this.color)
+    fill(this.color)
+    ellipse(this.x, this.y, this.size)
   }
 }
