@@ -30,10 +30,10 @@ function setup() {
 }
 
 function draw() {
-  background(0)
+  background(255)
   for (var i in squares) {
     squares[i].init()
-    squares[i].fadeIn()
+    squares[i].bounce()
   }
   ball.init()
   ball.update()
@@ -144,16 +144,19 @@ function Square (width, height, x, y) {
   this.h = height
   this.x = x
   this.y = y
+  this.hit = false
   this.alpha = 0
   this.isfadeIn = false
   this.init = function () {
-    stroke(this.color)
-    // translate(0, 0)
-    fill(this.color)
-    rect(x, y, width, height)
+    if (!startRun) {
+      stroke(255)
+      // translate(0, 0)
+      fill(255)
+      rect(x, y, width, height)
+    }
   }
   this.update = function () {
-    // this.fadeIn()
+    this.bounce()
   }
   this.ratate = function () {
     stroke(this.color)
@@ -165,7 +168,16 @@ function Square (width, height, x, y) {
     if (this.alpha <= 1 ){
       this.alpha += 0.01
     }
-    fill(this.color, this.alpha)
+    fill(this.color)
     rect(x, y, width, height)
+  }
+  this.bounce = function () {
+    var hit = collideRectCircle(x,y,width,height,ball.pos.x, ball.pos.y, 50);
+    if(hit && startRun) {
+       this.hit = true
+    }
+    if (this.hit) {
+      this.fadeIn()
+    }
   }
 }
