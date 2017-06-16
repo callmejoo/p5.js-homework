@@ -1,4 +1,5 @@
 function setup() {
+  frameRate(50)
   createCanvas(960, 540)
   noStroke()
 

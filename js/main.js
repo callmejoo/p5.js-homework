@@ -57,6 +57,7 @@ function Ball (x, y, size) {
   this.speed = createVector(0, 0)
   this.dragState = false
   this.color = color(random(255), random(255), random(255))
+  this.history = []
   this.size = size
   // 初始化
   this.init = function () {
@@ -70,6 +71,7 @@ function Ball (x, y, size) {
 
   // 逐帧
   this.update = function () {
+    var v = createVector(this.pos.x, this.pos.y)
     this.speedDown(1)   // 保持摩擦减速
     this.pos.add(this.speed)
     if (this.dragState === true) {
@@ -92,6 +94,10 @@ function Ball (x, y, size) {
       if (collidePointCircle(start.pos.x, start.pos.y, this.pos.x, this.pos.y, ballSize)) {
         backToOri = true
       }
+    }
+    if (startRun) {
+      this.history.push(v)
+      this.trace()
     }
   }
   this.moveTo = function (tx, ty) {
@@ -136,7 +142,12 @@ function Ball (x, y, size) {
     var speed = 1 - num * 0.001
     this.speed.mult(speed)
   }
-
+  this.trace = function () {
+    for (var i = 1; i < this.history.length; i++) {
+      stroke(255)
+      line(this.history[i-1].x, this.history[i-1].y, this.history[i].x, this.history[i].y)
+    }
+  }
 }
 
 function SideArc () {
@@ -251,7 +262,6 @@ function Cross (x, y, Color) {
         ballSpeed = ball.speed.x * 0.5
       }
       this.cStart = 500 / Math.abs(ballSpeed)
-      ball.speedDown(1)
       if (ball.pos.x < x) {
         this.hitFrom = 'right'
       }

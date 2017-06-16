@@ -1,4 +1,4 @@
-var ball, ballimg, sidearc, crosses = [], ballLine
+var ball, ballimg, sidearc, crosses = [], ballLine, trace = []
 var ballSize = 50, ballSpeed
 var mic
 var backToOri
