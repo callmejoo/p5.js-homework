@@ -1,74 +1,15 @@
-var squares = []
-var ball, sidearc
-var ballSize = 50
-var mic
-var backToOri
-var startRun
-var bong
-var horNum = 20
-var verNum = 15
-var squareHeight
-var squareWidth
-var bg,startCircle,sideArc,bgCircle = []
-var countStart, countEnd
-
-var start = {
-  pos: {
-    x: 130,
-    y: 100
-  }
-}
-function preload () {
-  bong = loadSound('pong.mp3')
-  bg = loadImage('images/bg.jpg')
-  startCircle = loadImage('images/start.png')
-  sideArc = loadImage('images/sidearc.png')
-}
-
-function setup() {
-  createCanvas(960, 540)
-  noStroke()
-  squareHeight = Math.round(height/verNum)
-  squareWidth = Math.round(width/horNum)
-  // 请求录音权限
-  mic = new p5.AudioIn()
-  mic.start()
-
-  ball = new Ball(start.pos.x, start.pos.y, ballSize)
-  sidearc = new SideArc()
-  // for (var i = 0; i < verNum; i++) {
-  //   for (var a = 0; a < horNum; a++) {
-  //     squares.push(new Square(squareWidth, squareHeight, a * squareWidth, i * squareHeight))
-  //   }
-  // }
-}
-
 function draw() {
-  background(255)
   image(bg, 0, 0, 960, 540)
-  push()
-  imageMode(CENTER)
-  translate(130, 100)
-  rotate(frameCount/20)
-  image(startCircle, 0, 0, 75, 75)
-  pop()
-  push()
+  startPoint()
   sidearc.init()
   sidearc.update()
-  pop()
-  push()
-  for (var i = 0; i < 20; i++) {
-    bgCircle.push(new BgCircle(20, 20, 30, 50))
-    bgCircle[i].init()
+  for (var i in bgCircle) { bgCircle[i].init() }
+  for (var i in crosses) {
+    crosses[i].init()
+    crosses[i].update()
   }
-
-  // for (var i in squares) {
-  //   squares[i].init()
-  //   squares[i].bounce()
-  // }
   ball.init()
   ball.update()
-
 }
 
 function mouseClicked () {
@@ -78,9 +19,11 @@ function mouseClicked () {
 }
 
 function mousePressed () {
-  var d = dist(mouseX, mouseY, ball.pos.x, ball.pos.y)
-  if (d <= ball.size/2) {
-    ball.dragState = true
+  if(!startRun){
+    var d = dist(mouseX, mouseY, ball.pos.x, ball.pos.y)
+    if (d <= ball.size/2) {
+      ball.dragState = true
+    }
   }
 }
 
@@ -92,6 +35,15 @@ function mouseReleased () {
   }
 }
 
+function startPoint () {
+  push()
+  imageMode(CENTER)
+  translate(130, 100)
+  rotate(frameCount/20)
+  image(startCircle, 0, 0, 75, 75)
+  pop()
+}
+
 function Ball (x, y, size) {
   this.pos = createVector(x, y)
   console.log('初始化于：', x, y, 'size:', size)
@@ -99,24 +51,23 @@ function Ball (x, y, size) {
   this.dragState = false
   this.color = color(random(255), random(255), random(255))
   this.size = size
-
   // 初始化
   this.init = function () {
+    push()
     stroke(this.color)
     if (!backToOri) line(this.pos.x, this.pos.y, x, y)
     fill(this.color)
     ellipse(this.pos.x, this.pos.y, this.size)
+    pop()
   }
 
   // 逐帧
   this.update = function () {
-
+    this.speedDown(1)   // 保持摩擦减速
     this.pos.add(this.speed)
-
     if (this.dragState === true) {
       this.moveTo(mouseX, mouseY)
     }
-
     // 碰壁检测
     if (this.pos.x >= width - this.size / 2) {
       this.bounce('right')
@@ -146,8 +97,6 @@ function Ball (x, y, size) {
     var goal = createVector(tx, ty)
     var power = p5.Vector.sub(goal, this.pos)
     power.mult(0.2)
-    // var go = power.copy()
-    // go.mult(0.3)
     this.speed.add(power)
   }
   this.bounce = function (side) {
@@ -171,55 +120,28 @@ function Ball (x, y, size) {
     power.setMag(len)
     this.speed.add(power)
   }
-}
+  this.speedUp = function (num) {
+    console.log('加速！')
+    var speed = 1 + num * 0.1
+    this.speed.mult(speed)
+  }
+  this.speedDown = function (num) {
+    var speed = 1 - num * 0.001
+    this.speed.mult(speed)
+  }
 
-function Square (width, height, x, y) {
-  this.color = color(random(255), random(255), random(255))
-  this.w = width
-  this.h = height
-  this.x = x
-  this.y = y
-  this.hit = false
-  this.alpha = 0
-  this.isfadeIn = false
-  this.init = function () {
-    if (!startRun) {
-      stroke(255)
-      // translate(0, 0)
-      fill(255)
-      rect(x, y, width, height)
-    }
-  }
-  this.update = function () {
-    this.bounce()
-  }
-  this.fadeIn = function () {
-    stroke(this.color)
-    // translate(0, 0)
-    if (this.alpha <= 1 ){
-      this.alpha += 0.01
-    }
-    fill(this.color)
-    rect(x, y, width, height)
-  }
-  this.bounce = function () {
-    var hit = collideRectCircle(x,y,width,height,ball.pos.x, ball.pos.y, ballSize);
-    if(hit && startRun) {
-       this.hit = true
-    }
-    if (this.hit) {
-      this.fadeIn()
-    }
-  }
 }
 
 function SideArc () {
   this.move = 0
   this.isTouch = false
+  this.speedUp = false
   this.init = function () {
     if (!this.isTouch) {
+      push()
       translate(width-120, 0)
       image(sideArc,0,0, 120, 120)
+      pop()
     }
   }
   this.update = function () {
@@ -227,21 +149,28 @@ function SideArc () {
     fill(ball.color)
     var hit = collideCircleCircle(ball.pos.x, ball.pos.y, ballSize, width, 0, 240)
     if (hit) {
-      ball.bounce('rightTop')
       this.isTouch = true
       countStart = frameCount
     }
     if (this.isTouch) {
-      this.touch()
+      if (!this.speedUp){
+        this.speedUp = true
+        ball.bounce('rightTop')
+        ball.speedUp(10)
+      }
+      this.touchAnimation()
     }
   }
-  this.touch = function () {
+  this.touchAnimation = function () {
+    push()
     translate(width-115, -5)
     image(sideArc, 0, 0, 120, 120)
     countEnd = frameCount
     if (countEnd - countStart > 5) {
       this.isTouch = false
+      this.speedUp = false
     }
+    pop()
   }
 }
 
@@ -249,13 +178,112 @@ function BgCircle (startX, startY, endX, endY) {
   this.color1 = color(252, 213, 140)
   this.color2 = color(252, 162, 134)
   this.color =  random(2) > 1 ? this.color1 : this.color2
-  this.size = random(5, 15)
-  this.x = random(5)
-  this.y = random(5)
+  this.size = random(2, 10)
+  this.x = random(endX - startX)
+  this.y = random(endY - startY)
   this.init = function () {
+    push()
     translate(startX, startY)
     stroke(this.color)
     fill(this.color)
     ellipse(this.x, this.y, this.size)
+    pop()
+  }
+}
+
+function Cross (x, y, Color) {
+  this.blue1 = color(46, 253, 224)
+  this.blue2 = color(0, 223, 212)
+  this.green1 = color(66, 161, 129)
+  this.green2 = color(57, 255, 151)
+  this.red = color(252, 102, 116)
+  this.gold = color(248, 203, 132)
+  this.hit = false
+  this.cStart = null
+  this.hitFrom = null
+  this.color = {
+    x: null,
+    y: null
+  }
+  this.x = x
+  this.y = y
+  this.init = function () {
+    if (Color === 'blue') {
+      this.color.x = this.blue1
+      this.color.y = this.blue2
+    }
+    if (Color === 'green') {
+      this.color.x = this.green1
+      this.color.y = this.green2
+    }
+    if (Color === 'red') {
+      this.color.x = this.gold
+      this.color.y = this.red
+    }
+    if (!this.hit) {
+      push()
+      translate(x, y)
+      stroke(this.color.x)
+      fill(this.color.x)
+      rect(-25, -1, 50, 2)
+      pop()
+      push()
+      translate(x, y)
+      stroke(this.color.y)
+      fill(this.color.y)
+      rect(-1, -25, 2, 50)
+      pop()
+    }
+  }
+  this.update = function () {
+    var hitX = collideRectCircle(x-25, y-1, 50, 2, ball.pos.x, ball.pos.y, ballSize)
+    var hitY = collideRectCircle(x-1, y-25, 2, 50, ball.pos.x, ball.pos.y, ballSize)
+    if (hitX || hitY) {
+      this.hit = true
+      if (ball.speed.x > 0) {
+        ballSpeed = ball.speed.x * 0.5
+      }
+      console.log(ballSpeed)
+      this.cStart = 500 / Math.abs(ballSpeed)
+      ball.speedDown(1)
+      if (ball.pos.x < x) {
+        this.hitFrom = 'right'
+      }
+      else if (ball.pos.x > x) {
+        this.hitFrom = 'left'
+      }
+    }
+    if (this.hit) {
+      if (this.cStart < 10000) {
+        this.cStart += 0.1
+      }
+      // console.log(this.cStart)
+      var speed = 10000/this.cStart
+      if (speed < 30) speed = 0
+      console.log(speed)
+      this.rotate(speed, this.hitFrom)
+    }
+  }
+  this.rotate = function (speed, dir) {
+    var s
+    if (dir === 'left') {
+      s = -speed
+    } else {
+      s = speed
+    }
+    push()
+    translate(x, y)
+    stroke(this.color.x)
+    fill(this.color.x)
+    rotate(s)
+    rect(-25, -1, 50, 2)
+    pop()
+    push()
+    translate(x, y)
+    stroke(this.color.y)
+    fill(this.color.y)
+    rotate(s)
+    rect(-1, -25, 2, 50)
+    pop()
   }
 }
