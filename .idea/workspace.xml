@@ -2,49 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22651e91-6734-400e-8b43-80479965bb50" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/ball.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/preload.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/setup.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/DRAGBALL/a.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/DRAGBALL/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/DRAGBALL/libraries/p5.collide2d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/DRAGBALL/libraries/p5.dom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/DRAGBALL/libraries/p5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/DRAGBALL/libraries/p5.sound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/DRAGBALL/sketch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/click to bomb/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/click to bomb/libraries/p5.dom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/click to bomb/libraries/p5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/click to bomb/libraries/p5.sound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/click to bomb/sketch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/fireworks/296075.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/fireworks/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/fireworks/libraries/p5.dom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/fireworks/libraries/p5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/fireworks/libraries/p5.sound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/fireworks/sketch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/look at you self from camera/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/look at you self from camera/libraries/p5.dom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/look at you self from camera/libraries/p5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/look at you self from camera/libraries/p5.sound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/look at you self from camera/sketch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/回弹/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/回弹/libraries/p5.dom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/回弹/libraries/p5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/回弹/libraries/p5.sound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/其他/回弹/sketch.js" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/Thumbs.db" afterPath="$PROJECT_DIR$/assets/images/Thumbs.db" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/bg.jpg" afterPath="$PROJECT_DIR$/assets/images/bg.jpg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/sidearc.png" afterPath="$PROJECT_DIR$/assets/images/sidearc.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/start.png" afterPath="$PROJECT_DIR$/assets/images/start.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/p5.collide2d.js" afterPath="$PROJECT_DIR$/js/libraries/p5.collide2d.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/p5.dom.js" afterPath="$PROJECT_DIR$/js/libraries/p5.dom.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/p5.js" afterPath="$PROJECT_DIR$/js/libraries/p5.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/libraries/p5.sound.js" afterPath="$PROJECT_DIR$/js/libraries/p5.sound.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pong.mp3" afterPath="$PROJECT_DIR$/assets/audio/pong.mp3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/Thumbs.db" afterPath="$PROJECT_DIR$/assets/images/Thumbs.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/preload.js" afterPath="$PROJECT_DIR$/js/preload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/setup.js" afterPath="$PROJECT_DIR$/js/setup.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -67,24 +28,20 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="566">
-                  <caret line="265" column="3" lean-forward="true" selection-start-line="265" selection-start-column="3" selection-end-line="265" selection-end-column="3" />
+                <state relative-caret-position="624">
+                  <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
                   <folding>
                     <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
-                    <element signature="n#!!block;n#mousePressed#0" expanded="false" />
                     <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
                     <element signature="n#!!block;n#startPoint#0" expanded="false" />
-                    <element signature="n#!!block;n#Ball#0" expanded="false" />
-                    <element signature="e#1318#1941#0" expanded="false" />
-                    <element signature="e#1976#2107#0" expanded="false" />
-                    <element signature="e#2142#2275#0" expanded="false" />
-                    <element signature="e#2308#2893#0" expanded="false" />
-                    <element signature="e#2926#3011#0" expanded="false" />
-                    <element signature="e#3046#3110#0" expanded="false" />
-                    <element signature="n#!!block;n#SideArc#0" expanded="false" />
-                    <element signature="e#3225#3351#0" expanded="false" />
+                    <element signature="e#2329#2462#0" expanded="false" />
+                    <element signature="e#2495#3080#0" expanded="false" />
+                    <element signature="e#3113#3198#0" expanded="false" />
+                    <element signature="e#3233#3297#0" expanded="false" />
+                    <element signature="e#3412#3538#0" expanded="false" />
                     <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-                    <element signature="e#4865#5442#0" expanded="false" />
+                    <element signature="n#!!block;n#Cross#0" expanded="false" />
+                    <element signature="e#5051#5628#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -107,8 +64,8 @@
           <file leaf-file-name="preload.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/preload.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+                <state relative-caret-position="154">
+                  <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -117,8 +74,8 @@
           <file leaf-file-name="setup.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/setup.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="544">
-                  <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+                <state relative-caret-position="418">
+                  <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -141,6 +98,7 @@
       <find>rect</find>
       <find>elasticTo</find>
       <find>50</find>
+      <find>console</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -377,12 +335,12 @@
       <workItem from="1497336817754" duration="2868000" />
       <workItem from="1497311650648" duration="10278000" />
       <workItem from="1497408477262" duration="8648000" />
-      <workItem from="1497495710548" duration="37517000" />
+      <workItem from="1497495710548" duration="39873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59311000" />
+    <option name="totallyTimeSpent" value="61667000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,9 +353,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11643836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11643836" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32910052" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -434,20 +391,16 @@
           <caret line="155" column="11" lean-forward="false" selection-start-line="155" selection-start-column="11" selection-end-line="155" selection-end-column="11" />
           <folding>
             <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
-            <element signature="n#!!block;n#mousePressed#0" expanded="false" />
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
-            <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#1318#1941#0" expanded="false" />
-            <element signature="e#1976#2107#0" expanded="false" />
-            <element signature="e#2142#2275#0" expanded="false" />
-            <element signature="e#2308#2893#0" expanded="false" />
-            <element signature="e#2926#3011#0" expanded="false" />
-            <element signature="e#3046#3110#0" expanded="false" />
-            <element signature="n#!!block;n#SideArc#0" expanded="false" />
-            <element signature="e#3225#3351#0" expanded="false" />
+            <element signature="e#2329#2462#0" expanded="false" />
+            <element signature="e#2495#3080#0" expanded="false" />
+            <element signature="e#3113#3198#0" expanded="false" />
+            <element signature="e#3233#3297#0" expanded="false" />
+            <element signature="e#3412#3538#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#4865#5442#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
+            <element signature="e#5051#5628#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -482,20 +435,16 @@
           <caret line="24" column="18" lean-forward="false" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding>
             <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
-            <element signature="n#!!block;n#mousePressed#0" expanded="false" />
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
-            <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#1318#1941#0" expanded="false" />
-            <element signature="e#1976#2107#0" expanded="false" />
-            <element signature="e#2142#2275#0" expanded="false" />
-            <element signature="e#2308#2893#0" expanded="false" />
-            <element signature="e#2926#3011#0" expanded="false" />
-            <element signature="e#3046#3110#0" expanded="false" />
-            <element signature="n#!!block;n#SideArc#0" expanded="false" />
-            <element signature="e#3225#3351#0" expanded="false" />
+            <element signature="e#2329#2462#0" expanded="false" />
+            <element signature="e#2495#3080#0" expanded="false" />
+            <element signature="e#3113#3198#0" expanded="false" />
+            <element signature="e#3233#3297#0" expanded="false" />
+            <element signature="e#3412#3538#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#4865#5442#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
+            <element signature="e#5051#5628#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -530,20 +479,16 @@
           <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
-            <element signature="n#!!block;n#mousePressed#0" expanded="false" />
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
-            <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#1318#1941#0" expanded="false" />
-            <element signature="e#1976#2107#0" expanded="false" />
-            <element signature="e#2142#2275#0" expanded="false" />
-            <element signature="e#2308#2893#0" expanded="false" />
-            <element signature="e#2926#3011#0" expanded="false" />
-            <element signature="e#3046#3110#0" expanded="false" />
-            <element signature="n#!!block;n#SideArc#0" expanded="false" />
-            <element signature="e#3225#3351#0" expanded="false" />
+            <element signature="e#2329#2462#0" expanded="false" />
+            <element signature="e#2495#3080#0" expanded="false" />
+            <element signature="e#3113#3198#0" expanded="false" />
+            <element signature="e#3233#3297#0" expanded="false" />
+            <element signature="e#3412#3538#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#4865#5442#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
+            <element signature="e#5051#5628#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -582,14 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ball.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -598,43 +535,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/preload.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/preload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/setup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="265" column="3" lean-forward="true" selection-start-line="265" selection-start-column="3" selection-end-line="265" selection-end-column="3" />
+        <state relative-caret-position="624">
+          <caret line="168" column="5" lean-forward="true" selection-start-line="168" selection-start-column="5" selection-end-line="168" selection-end-column="5" />
           <folding>
             <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
-            <element signature="n#!!block;n#mousePressed#0" expanded="false" />
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
-            <element signature="n#!!block;n#Ball#0" expanded="false" />
-            <element signature="e#1318#1941#0" expanded="false" />
-            <element signature="e#1976#2107#0" expanded="false" />
-            <element signature="e#2142#2275#0" expanded="false" />
-            <element signature="e#2308#2893#0" expanded="false" />
-            <element signature="e#2926#3011#0" expanded="false" />
-            <element signature="e#3046#3110#0" expanded="false" />
-            <element signature="n#!!block;n#SideArc#0" expanded="false" />
-            <element signature="e#3225#3351#0" expanded="false" />
+            <element signature="e#2329#2462#0" expanded="false" />
+            <element signature="e#2495#3080#0" expanded="false" />
+            <element signature="e#3113#3198#0" expanded="false" />
+            <element signature="e#3233#3297#0" expanded="false" />
+            <element signature="e#3412#3538#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#4865#5442#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
+            <element signature="e#5051#5628#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/setup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="38" column="43" lean-forward="true" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>

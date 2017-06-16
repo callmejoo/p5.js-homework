@@ -10,6 +10,7 @@ function draw() {
   }
   ball.init()
   ball.update()
+  ballLine.update()
 }
 
 function mouseClicked () {
@@ -43,7 +44,13 @@ function startPoint () {
   image(startCircle, 0, 0, 75, 75)
   pop()
 }
-
+function Line (x, y) {
+  this.update = function () {
+    push()
+    fill(color(random(255),random(255),random(255)))
+    if (!backToOri) line(ball.pos.x, ball.pos.y, x, y)
+  }
+}
 function Ball (x, y, size) {
   this.pos = createVector(x, y)
   console.log('初始化于：', x, y, 'size:', size)
@@ -54,10 +61,10 @@ function Ball (x, y, size) {
   // 初始化
   this.init = function () {
     push()
-    stroke(this.color)
-    if (!backToOri) line(this.pos.x, this.pos.y, x, y)
-    fill(this.color)
-    ellipse(this.pos.x, this.pos.y, this.size)
+    translate(this.pos.x, this.pos.y)
+    imageMode(CENTER)
+    rotate(frameCount / 100)
+    image(ballimg, 0, 0, this.size, this.size)
     pop()
   }
 
@@ -156,7 +163,7 @@ function SideArc () {
       if (!this.speedUp){
         this.speedUp = true
         ball.bounce('rightTop')
-        ball.speedUp(10)
+        ball.speedUp(5)
       }
       this.touchAnimation()
     }
@@ -243,7 +250,6 @@ function Cross (x, y, Color) {
       if (ball.speed.x > 0) {
         ballSpeed = ball.speed.x * 0.5
       }
-      console.log(ballSpeed)
       this.cStart = 500 / Math.abs(ballSpeed)
       ball.speedDown(1)
       if (ball.pos.x < x) {
@@ -260,7 +266,6 @@ function Cross (x, y, Color) {
       // console.log(this.cStart)
       var speed = 10000/this.cStart
       if (speed < 30) speed = 0
-      console.log(speed)
       this.rotate(speed, this.hitFrom)
     }
   }

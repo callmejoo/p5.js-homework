@@ -1,4 +1,4 @@
-var ball, sidearc, crosses = []
+var ball, ballimg, sidearc, crosses = [], ballLine
 var ballSize = 50, ballSpeed
 var mic
 var backToOri
@@ -16,6 +16,7 @@ var start = {
 function preload () {
   bong = loadSound('assets/audio/pong.mp3')
   bg = loadImage('assets/images/bg.jpg')
+  ballimg = loadImage('assets/images/ball.png')
   startCircle = loadImage('assets/images/start.png')
   sideArc = loadImage('assets/images/sidearc.png')
 }

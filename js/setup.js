@@ -8,7 +8,7 @@ function setup() {
 
   // 实例化弹球
   ball = new Ball(start.pos.x, start.pos.y, ballSize)
-
+  ballLine = new Line(start.pos.x, start.pos.y)
   // 实例化加速球
   sidearc = new SideArc()
 
