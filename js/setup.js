@@ -49,4 +49,10 @@ function setup() {
   crosses.push(new Cross(750, 100, 'red'))
   crosses.push(new Cross(750, 200, 'red'))
   crosses.push(new Cross(700, 50, 'red'))
+
+  // 生产六边形
+  tris.push(new Triangle(250, 410, 'red', 180))
+  tris.push(new Triangle(270, 410, 'red', 180))
+  tris.push(new Triangle(290, 410, 'red', 180))
+  tris.push(new Triangle(300, 420, 'red', 120))
 }

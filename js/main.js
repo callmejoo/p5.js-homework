@@ -8,6 +8,9 @@ function draw() {
     crosses[i].init()
     crosses[i].update()
   }
+  for (var i in tris) {
+    tris[i].init()
+  }
   ball.init()
   ball.update()
   ballLine.update()
@@ -44,6 +47,7 @@ function startPoint () {
   image(startCircle, 0, 0, 75, 75)
   pop()
 }
+
 function Line (x, y) {
   this.update = function () {
     push()
@@ -51,6 +55,7 @@ function Line (x, y) {
     if (!backToOri) line(ball.pos.x, ball.pos.y, x, y)
   }
 }
+
 function Ball (x, y, size) {
   this.pos = createVector(x, y)
   console.log('初始化于：', x, y, 'size:', size)
@@ -259,7 +264,7 @@ function Cross (x, y, Color) {
     if (hitX || hitY) {
       this.hit = true
       if (ball.speed.x > 0) {
-        ballSpeed = ball.speed.x * 0.5
+        ballSpeed = (ball.speed.x + ball.speed.y) * 0.2
       }
       this.cStart = 500 / Math.abs(ballSpeed)
       if (ball.pos.x < x) {
@@ -299,6 +304,46 @@ function Cross (x, y, Color) {
     fill(this.color.y)
     rotate(s)
     rect(-1, -25, 2, 50)
+    pop()
+  }
+}
+
+function Triangle (x, y, fillcolor, degree) {
+  this.red = color(252, 102, 116)
+  this.gold = color(248, 203, 132)
+  this.green = color(57, 255, 151)
+  this.darkGreen = color(66, 161, 129)
+  this.blue = color(46, 253, 224)
+  this.darkBlue = color(0, 223, 212)
+  this.colorRed = random(2) > 1 ? this.gold : this.red
+  this.colorGreen = random(2) > 1 ? this.darkGreen : this.green
+  this.colorBule = random(2) > 1 ? this.blue : this.darkBlue
+  this.color = null
+  this.sideLen = 20
+  this.init = function () {
+    if (fillcolor === 'red') {
+      this.color = this.colorRed
+    }
+    if (fillcolor === 'blue') {
+      this.color = this.colorBule
+    }
+    if (fillcolor === 'green') {
+      this.color = this.colorRed
+    }
+    var x1 = 0
+    var y1 = 0 - (20 * Math.sqrt(3)) / 3
+    var x2 = 0 - this.sideLen / 2
+    var y2 = 0 + (10 * Math.sqrt(3)) / 3
+    var x3 = 0 + this.sideLen / 2
+    var y3 = 0 + (10 * Math.sqrt(3)) / 3
+    if (!degree) degree = 0
+    push()
+    angleMode(CENTER)
+    translate(x, y)
+    stroke(this.color)
+    fill(this.color)
+    rotate(radians(degree))
+    triangle(x1, y1, x2, y2, x3, y3)
     pop()
   }
 }
