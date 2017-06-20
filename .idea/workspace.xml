@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22651e91-6734-400e-8b43-80479965bb50" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+=======
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/setup.js" afterPath="$PROJECT_DIR$/js/setup.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -27,8 +30,13 @@
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state relative-caret-position="434">
                   <caret line="353" column="9" lean-forward="true" selection-start-line="353" selection-start-column="9" selection-end-line="353" selection-end-column="9" />
+=======
+                <state relative-caret-position="236">
+                  <caret line="328" column="25" lean-forward="true" selection-start-line="328" selection-start-column="25" selection-end-line="328" selection-end-column="25" />
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
                   <folding>
                     <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
                     <element signature="n#!!block;n#mousePressed#0" expanded="false" />
@@ -92,8 +100,13 @@
           <file leaf-file-name="setup.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/setup.js">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
                 <state relative-caret-position="742">
                   <caret line="141" column="33" lean-forward="true" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
+=======
+                <state relative-caret-position="110">
+                  <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
                   <folding />
                 </state>
               </provider>
@@ -357,12 +370,20 @@
       <workItem from="1497408477262" duration="8648000" />
       <workItem from="1497495710548" duration="44798000" />
       <workItem from="1497669981571" duration="9277000" />
+<<<<<<< HEAD
       <workItem from="1497927797377" duration="14252000" />
+=======
+      <workItem from="1497927797377" duration="9022000" />
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="90121000" />
+=======
+    <option name="totallyTimeSpent" value="84891000" />
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -649,34 +670,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/preload.js">
+    <entry file="file://$PROJECT_DIR$/../../111.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        <state relative-caret-position="-1397">
+          <caret line="433" column="0" lean-forward="false" selection-start-line="433" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+=======
+    <entry file="file://$PROJECT_DIR$/js/preload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../111.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="605">
           <caret line="381" column="5" lean-forward="true" selection-start-line="381" selection-start-column="5" selection-end-line="381" selection-end-column="5" />
+=======
+        <state relative-caret-position="110">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="434">
           <caret line="353" column="9" lean-forward="true" selection-start-line="353" selection-start-column="9" selection-end-line="353" selection-end-column="9" />
+=======
+        <state relative-caret-position="236">
+          <caret line="328" column="25" lean-forward="true" selection-start-line="328" selection-start-column="25" selection-end-line="328" selection-end-column="25" />
+>>>>>>> 2332c94b5762ab65e5f5abe3dbb4c003cdb14849
           <folding>
             <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
             <element signature="n#!!block;n#mousePressed#0" expanded="false" />
