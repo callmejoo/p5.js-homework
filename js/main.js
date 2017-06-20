@@ -264,7 +264,7 @@ function Cross (x, y, Color) {
     if (hitX || hitY) {
       this.hit = true
       if (ball.speed.x > 0) {
-        ballSpeed = (ball.speed.x + ball.speed.y) * 0.2
+        ballSpeed = (Math.abs(ball.speed.x) + Math.abs(ball.speed.y)) * 0.2
       }
       this.cStart = 500 / Math.abs(ballSpeed)
       if (ball.pos.x < x) {
@@ -308,7 +308,19 @@ function Cross (x, y, Color) {
   }
 }
 
-function Triangle (x, y, fillcolor, degree) {
+function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
+  this.y1 = y1 + 130
+  this.y2 = y2 + 130
+  this.y3 = y3 + 130
+  this.pos = {
+    x1: x1,
+    y1: this.y1,
+    x2: x2,
+    y2: this.y2,
+    x3: x3,
+    y3: this.y3
+  }
+  this.center = 
   this.red = color(252, 102, 116)
   this.gold = color(248, 203, 132)
   this.green = color(57, 255, 151)
@@ -319,7 +331,6 @@ function Triangle (x, y, fillcolor, degree) {
   this.colorGreen = random(2) > 1 ? this.darkGreen : this.green
   this.colorBule = random(2) > 1 ? this.blue : this.darkBlue
   this.color = null
-  this.sideLen = 20
   this.init = function () {
     if (fillcolor === 'red') {
       this.color = this.colorRed
@@ -328,22 +339,19 @@ function Triangle (x, y, fillcolor, degree) {
       this.color = this.colorBule
     }
     if (fillcolor === 'green') {
-      this.color = this.colorRed
+      this.color = this.colorGreen
     }
-    var x1 = 0
-    var y1 = 0 - (20 * Math.sqrt(3)) / 3
-    var x2 = 0 - this.sideLen / 2
-    var y2 = 0 + (10 * Math.sqrt(3)) / 3
-    var x3 = 0 + this.sideLen / 2
-    var y3 = 0 + (10 * Math.sqrt(3)) / 3
-    if (!degree) degree = 0
     push()
-    angleMode(CENTER)
-    translate(x, y)
     stroke(this.color)
     fill(this.color)
     rotate(radians(degree))
-    triangle(x1, y1, x2, y2, x3, y3)
+    triangle(this.pos.x1, this.pos.y1, this.pos.x2, this.pos.y2, this.pos.x3, this.pos.y3)
     pop()
+  }
+  this.update = function () {
+    var hit = collide
+  }
+  this.bounce = function () {
+
   }
 }
