@@ -335,14 +335,15 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
   this.colorGreen = random(2) > 1 ? this.darkGreen : this.green
   this.colorBule = random(2) > 1 ? this.blue : this.darkBlue
   this.color = null
+  this.hit = false
   this.init = function () {
     if (fillcolor === 'red') {
       this.color = this.colorRed
     }
-    if (fillcolor === 'blue') {
+    else if (fillcolor === 'blue') {
       this.color = this.colorBule
     }
-    if (fillcolor === 'green') {
+    else if (fillcolor === 'green') {
       this.color = this.colorGreen
     }
     push()
@@ -356,13 +357,35 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
   }
   this.update = function () {
     // 弹球与三角碰撞检测
-    if (collideCircleCircle(ball.pos.x, ball.pos.y, ballSize, this.center.x, this.center.y, 10)) {
-      if (ball.pos.x < this.center.x) {
-        this.hitFrom = 'right'
+    if (collideCircleCircle(ball.pos.x, ball.pos.y, ballSize, this.center.x, this.center.y, 20)) {
+      // if(ball.pos.x < this.center.x && ball.pos.y > this.center.y) {
+      //   console.log('左上')
+      //   ball.bounce('left')
+      // }
+      // else if(ball.pos.x < this.center.x && ball.pos.y < this.center.y) {
+      //   ball.bounce('right')
+      // }
+      // else if(ball.pos.x > this.center.x && ball.pos.y > this.center.y) {
+      //   ball.bounce('left')
+      // }
+      // else if(ball.pos.x > this.center.x && ball.pos.y < this.center.y) {
+      //   ball.bounce('left')
+      // }
+
+      // if (ball.pos.x < this.center.x) {
+      //   this.hitFrom = 'right'
+      // }
+      // else if (ball.pos.x > this.center.x) {
+      //   this.hitFrom = 'left'
+      // }
+    }
+    for(var i = 0; i < tris.length; i++) {
+      if(this.center.x !== tris[i].center.x) {
+        this.hit = collideCircleCircle(this.center.x, this.center.y, 10, tris[i].center.x, tris[i].center.y, 15)
       }
-      else if (ball.pos.x > this.center.x) {
-        this.hitFrom = 'left'
-      }
+    }
+    if(this.hit) {
+      console.log('hit')
     }
   }
   this.bounce = function () {

@@ -50,6 +50,7 @@ function setup() {
   crosses.push(new Cross(700, 50, 'red'))
 
   // 生产六边形
+  // 红黄
   tris.push(new Triangle(233.6, 266.7,254.5,230.6,275.3,266.7, 'red'))
   tris.push(new Triangle(275.3,266.7,296.1,230.6,317,266.7, 'red'))
   tris.push(new Triangle(296.1,230.6,275.3,266.7,254.5,230.6, 'red'))
@@ -106,4 +107,37 @@ function setup() {
   tris.push(new Triangle(421.1,375,400.3,411.1,379.5,375, 'red'))
   tris.push(new Triangle(358.6,411.1,379.5,375,400.3,411.1, 'red'))
 
+  // 蓝绿
+  tris.push(new Triangle(800,119,837.5,140.6,800,162.3, 'blue'))
+  tris.push(new Triangle(800,162.3,837.5,183.9,800,205.6, 'blue'))
+  tris.push(new Triangle(837.5,183.9,800,162.3,837.5,140.6, 'blue'))
+  tris.push(new Triangle(800,205.6,762.5,183.9,800,162.3, 'blue'))
+  tris.push(new Triangle(800,162.3,762.5,140.6,800,119, 'blue'))
+  tris.push(new Triangle(762.5,140.6,800,162.3,762.5,183.9, 'blue'))
+  tris.push(new Triangle(875,205.6,837.5,227.2,837.5,183.9, 'blue'))
+  tris.push(new Triangle(875,248.9,837.5,270.5,837.5,227.2, 'blue'))
+  tris.push(new Triangle(875,248.9,837.5,227.2,875.0,205.6, 'blue'))
+  tris.push(new Triangle(837.5,270.5,800,248.9,837.5,227.2, 'blue'))
+  tris.push(new Triangle(837.5,227.2,800,205.6,837.5,183.9, 'blue'))
+  tris.push(new Triangle(800,205.6,837.5,227.2,800,248.9, 'blue'))
+  tris.push(new Triangle(800,248.9,837.5,270.5,800,292.2, 'blue'))
+  tris.push(new Triangle(800,292.2,762.5,270.5,800,248.9, 'blue'))
+  tris.push(new Triangle(762.5,183.9,800,205.6,762.5,227.2, 'blue'))
+  tris.push(new Triangle(762.5,227.2,800,248.9,762.5,270.5, 'blue'))
+  tris.push(new Triangle(800,248.9,762.5,227.2,800,205.6, 'blue'))
+  tris.push(new Triangle(762.5,270.5,725.0,248.9,762.5,227.2, 'blue'))
+  tris.push(new Triangle(762.5,227.2,725,205.6,762.5,183.9, 'blue'))
+  tris.push(new Triangle(725,205.6,762.5,227.2,725,248.9, 'blue'))
+  tris.push(new Triangle(725,162.3,762.5,183.9,725.0,205.6, 'blue'))
+  tris.push(new Triangle(762.5,183.9,725.0,162.3,762.5,140.6, 'blue'))
+  tris.push(new Triangle(875,162.3,837.5,183.9,837.5,140.6, 'blue'))
+  tris.push(new Triangle(875,205.6,837.5,183.9,875,162.3, 'blue'))
+
+  // 绿色
+  tris.push(new Triangle(601.6,75,561.6,51.9,601.6,28.8, 'green'))
+  tris.push(new Triangle(561.6,5.7,601.6,28.8,561.6,51.9, 'green'))
+  tris.push(new Triangle(561.6,51.9,601.6,75,561.6,98.1, 'green'))
+  tris.push(new Triangle(561.6,98.1,521.6,75,561.6,51.9, 'green'))
+  tris.push(new Triangle(521.6,28.8,561.6,51.9,521.6,75, 'green'))
+  tris.push(new Triangle(561.6,51.9,521.6,28.8,561.6,5.7, 'green'))
 }

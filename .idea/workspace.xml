@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="22651e91-6734-400e-8b43-80479965bb50" name="Default" comment="" />
+    <list default="true" id="22651e91-6734-400e-8b43-80479965bb50" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/setup.js" afterPath="$PROJECT_DIR$/js/setup.js" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -17,14 +21,14 @@
     <favorites_list name="p5.js-homework" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.61538464">
+    <splitter split-orientation="horizontal" split-proportion="0.38282648">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1116">
-                  <caret line="368" column="0" lean-forward="true" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
+                <state relative-caret-position="434">
+                  <caret line="353" column="9" lean-forward="true" selection-start-line="353" selection-start-column="9" selection-end-line="353" selection-end-column="9" />
                   <folding>
                     <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
                     <element signature="n#!!block;n#mousePressed#0" expanded="false" />
@@ -33,24 +37,20 @@
                     <element signature="n#!!block;n#Line#0" expanded="false" />
                     <element signature="n#!!block;n#Ball#0" expanded="false" />
                     <element signature="e#1395#1557#0" expanded="false" />
+                    <element signature="e#1595#2339#0" expanded="false" />
                     <element signature="e#2374#2505#0" expanded="false" />
                     <element signature="e#2540#2673#0" expanded="false" />
+                    <element signature="e#3324#3409#0" expanded="false" />
+                    <element signature="e#3444#3508#0" expanded="false" />
+                    <element signature="e#3536#3708#0" expanded="false" />
                     <element signature="n#!!block;n#SideArc#0" expanded="false" />
                     <element signature="n#!!block;n#BgCircle#0" expanded="false" />
+                    <element signature="n#!!block;n#Cross#0" expanded="false" />
                     <element signature="e#5461#6038#0" expanded="false" />
                     <element signature="e#6866#7215#0" expanded="false" />
-                    <element signature="e#7938#8518#0" expanded="false" />
+                    <element signature="e#7359#7450#0" expanded="false" />
+                    <element signature="e#7467#7497#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -58,8 +58,8 @@
           <file leaf-file-name="111.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/../../111.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1397">
-                  <caret line="433" column="0" lean-forward="false" selection-start-line="433" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
+                <state relative-caret-position="605">
+                  <caret line="381" column="5" lean-forward="true" selection-start-line="381" selection-start-column="5" selection-end-line="381" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -92,8 +92,8 @@
           <file leaf-file-name="setup.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/setup.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="110">
-                  <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+                <state relative-caret-position="742">
+                  <caret line="141" column="33" lean-forward="true" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -134,10 +134,10 @@
         <option value="$PROJECT_DIR$/js/ball.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/preload.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/../../111.html" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/js/setup.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -357,12 +357,12 @@
       <workItem from="1497408477262" duration="8648000" />
       <workItem from="1497495710548" duration="44798000" />
       <workItem from="1497669981571" duration="9277000" />
-      <workItem from="1497927797377" duration="9977000" />
+      <workItem from="1497927797377" duration="14252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85846000" />
+    <option name="totallyTimeSpent" value="90121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -420,13 +420,19 @@
             <element signature="n#!!block;n#Line#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
             <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#1595#2339#0" expanded="false" />
             <element signature="e#2374#2505#0" expanded="false" />
             <element signature="e#2540#2673#0" expanded="false" />
+            <element signature="e#3324#3409#0" expanded="false" />
+            <element signature="e#3444#3508#0" expanded="false" />
+            <element signature="e#3536#3708#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
             <element signature="e#5461#6038#0" expanded="false" />
             <element signature="e#6866#7215#0" expanded="false" />
-            <element signature="e#7938#8518#0" expanded="false" />
+            <element signature="e#7359#7450#0" expanded="false" />
+            <element signature="e#7467#7497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -467,13 +473,19 @@
             <element signature="n#!!block;n#Line#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
             <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#1595#2339#0" expanded="false" />
             <element signature="e#2374#2505#0" expanded="false" />
             <element signature="e#2540#2673#0" expanded="false" />
+            <element signature="e#3324#3409#0" expanded="false" />
+            <element signature="e#3444#3508#0" expanded="false" />
+            <element signature="e#3536#3708#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
             <element signature="e#5461#6038#0" expanded="false" />
             <element signature="e#6866#7215#0" expanded="false" />
-            <element signature="e#7938#8518#0" expanded="false" />
+            <element signature="e#7359#7450#0" expanded="false" />
+            <element signature="e#7467#7497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -514,13 +526,19 @@
             <element signature="n#!!block;n#Line#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
             <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#1595#2339#0" expanded="false" />
             <element signature="e#2374#2505#0" expanded="false" />
             <element signature="e#2540#2673#0" expanded="false" />
+            <element signature="e#3324#3409#0" expanded="false" />
+            <element signature="e#3444#3508#0" expanded="false" />
+            <element signature="e#3536#3708#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
             <element signature="e#5461#6038#0" expanded="false" />
             <element signature="e#6866#7215#0" expanded="false" />
-            <element signature="e#7938#8518#0" expanded="false" />
+            <element signature="e#7359#7450#0" expanded="false" />
+            <element signature="e#7467#7497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,13 +565,19 @@
             <element signature="n#!!block;n#Line#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
             <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#1595#2339#0" expanded="false" />
             <element signature="e#2374#2505#0" expanded="false" />
             <element signature="e#2540#2673#0" expanded="false" />
+            <element signature="e#3324#3409#0" expanded="false" />
+            <element signature="e#3444#3508#0" expanded="false" />
+            <element signature="e#3536#3708#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
             <element signature="e#5461#6038#0" expanded="false" />
             <element signature="e#6866#7215#0" expanded="false" />
-            <element signature="e#7938#8518#0" expanded="false" />
+            <element signature="e#7359#7450#0" expanded="false" />
+            <element signature="e#7467#7497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -580,13 +604,19 @@
             <element signature="n#!!block;n#Line#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
             <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#1595#2339#0" expanded="false" />
             <element signature="e#2374#2505#0" expanded="false" />
             <element signature="e#2540#2673#0" expanded="false" />
+            <element signature="e#3324#3409#0" expanded="false" />
+            <element signature="e#3444#3508#0" expanded="false" />
+            <element signature="e#3536#3708#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
             <element signature="e#5461#6038#0" expanded="false" />
             <element signature="e#6866#7215#0" expanded="false" />
-            <element signature="e#7938#8518#0" expanded="false" />
+            <element signature="e#7359#7450#0" expanded="false" />
+            <element signature="e#7467#7497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -619,14 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../111.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1397">
-          <caret line="433" column="0" lean-forward="false" selection-start-line="433" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/preload.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -635,18 +657,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/setup.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="88">
+          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../111.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="381" column="5" lean-forward="true" selection-start-line="381" selection-start-column="5" selection-end-line="381" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="368" column="0" lean-forward="true" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
+        <state relative-caret-position="434">
+          <caret line="353" column="9" lean-forward="true" selection-start-line="353" selection-start-column="9" selection-end-line="353" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
             <element signature="n#!!block;n#mousePressed#0" expanded="false" />
@@ -655,21 +685,27 @@
             <element signature="n#!!block;n#Line#0" expanded="false" />
             <element signature="n#!!block;n#Ball#0" expanded="false" />
             <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#1595#2339#0" expanded="false" />
             <element signature="e#2374#2505#0" expanded="false" />
             <element signature="e#2540#2673#0" expanded="false" />
+            <element signature="e#3324#3409#0" expanded="false" />
+            <element signature="e#3444#3508#0" expanded="false" />
+            <element signature="e#3536#3708#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
+            <element signature="n#!!block;n#Cross#0" expanded="false" />
             <element signature="e#5461#6038#0" expanded="false" />
             <element signature="e#6866#7215#0" expanded="false" />
-            <element signature="e#7938#8518#0" expanded="false" />
+            <element signature="e#7359#7450#0" expanded="false" />
+            <element signature="e#7467#7497#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/js/setup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        <state relative-caret-position="742">
+          <caret line="141" column="33" lean-forward="true" selection-start-line="141" selection-start-column="33" selection-end-line="141" selection-end-column="33" />
           <folding />
         </state>
       </provider>
