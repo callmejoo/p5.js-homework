@@ -10,6 +10,7 @@ function draw() {
   }
   for (var i in tris) {
     tris[i].init()
+    tris[i].update()
   }
   ball.init()
   ball.update()
@@ -320,7 +321,10 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
     x3: x3,
     y3: this.y3
   }
-  this.center = 
+  this.center = {
+    x: null,
+    y: null
+  }
   this.red = color(252, 102, 116)
   this.gold = color(248, 203, 132)
   this.green = color(57, 255, 151)
@@ -342,14 +346,24 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
       this.color = this.colorGreen
     }
     push()
+    translate(this.pos.x1, this.pos.y1)
     stroke(this.color)
     fill(this.color)
-    rotate(radians(degree))
-    triangle(this.pos.x1, this.pos.y1, this.pos.x2, this.pos.y2, this.pos.x3, this.pos.y3)
+    triangle(0, 0, this.pos.x2 - this.pos.x1, this.pos.y2 -this.pos.y1, this.pos.x3-this.pos.x1, this.pos.y3-this.pos.y1)
     pop()
+    this.center.x = (this.pos.x1 + this.pos.x2 + this.pos.x3) / 3
+    this.center.y = (this.pos.y1 + this.pos.y2 + this.pos.y3) / 3
   }
   this.update = function () {
-    var hit = collide
+    // 弹球与三角碰撞检测
+    if (collideCircleCircle(ball.pos.x, ball.pos.y, ballSize, this.center.x, this.center.y, 10)) {
+      if (ball.pos.x < this.center.x) {
+        this.hitFrom = 'right'
+      }
+      else if (ball.pos.x > this.center.x) {
+        this.hitFrom = 'left'
+      }
+    }
   }
   this.bounce = function () {
 

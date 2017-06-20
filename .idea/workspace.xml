@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22651e91-6734-400e-8b43-80479965bb50" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/images/Thumbs.db" afterPath="$PROJECT_DIR$/assets/images/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/main.js" afterPath="$PROJECT_DIR$/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/setup.js" afterPath="$PROJECT_DIR$/js/setup.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,24 +19,29 @@
     <favorites_list name="p5.js-homework" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.61538464">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="481">
-                  <caret line="322" column="16" lean-forward="false" selection-start-line="322" selection-start-column="16" selection-end-line="322" selection-end-column="16" />
+                <state relative-caret-position="698">
+                  <caret line="362" column="41" lean-forward="false" selection-start-line="362" selection-start-column="41" selection-end-line="362" selection-end-column="41" />
                   <folding>
                     <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
                     <element signature="n#!!block;n#mousePressed#0" expanded="false" />
                     <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
                     <element signature="n#!!block;n#startPoint#0" expanded="false" />
                     <element signature="n#!!block;n#Line#0" expanded="false" />
+                    <element signature="n#!!block;n#Ball#0" expanded="false" />
+                    <element signature="e#1395#1557#0" expanded="false" />
+                    <element signature="e#2374#2505#0" expanded="false" />
+                    <element signature="e#2540#2673#0" expanded="false" />
                     <element signature="n#!!block;n#SideArc#0" expanded="false" />
                     <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-                    <element signature="e#5440#6017#0" expanded="false" />
-                    <element signature="e#6845#7194#0" expanded="false" />
+                    <element signature="e#5461#6038#0" expanded="false" />
+                    <element signature="e#6866#7215#0" expanded="false" />
+                    <element signature="e#7938#8518#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -346,12 +348,12 @@
       <workItem from="1497408477262" duration="8648000" />
       <workItem from="1497495710548" duration="44798000" />
       <workItem from="1497669981571" duration="9277000" />
-      <workItem from="1497927797377" duration="5306000" />
+      <workItem from="1497927797377" duration="7439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81175000" />
+    <option name="totallyTimeSpent" value="83308000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,10 +409,15 @@
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
             <element signature="n#!!block;n#Line#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#2374#2505#0" expanded="false" />
+            <element signature="e#2540#2673#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#5440#6017#0" expanded="false" />
-            <element signature="e#6845#7194#0" expanded="false" />
+            <element signature="e#5461#6038#0" expanded="false" />
+            <element signature="e#6866#7215#0" expanded="false" />
+            <element signature="e#7938#8518#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -449,10 +456,15 @@
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
             <element signature="n#!!block;n#Line#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#2374#2505#0" expanded="false" />
+            <element signature="e#2540#2673#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#5440#6017#0" expanded="false" />
-            <element signature="e#6845#7194#0" expanded="false" />
+            <element signature="e#5461#6038#0" expanded="false" />
+            <element signature="e#6866#7215#0" expanded="false" />
+            <element signature="e#7938#8518#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -491,10 +503,15 @@
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
             <element signature="n#!!block;n#Line#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#2374#2505#0" expanded="false" />
+            <element signature="e#2540#2673#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#5440#6017#0" expanded="false" />
-            <element signature="e#6845#7194#0" expanded="false" />
+            <element signature="e#5461#6038#0" expanded="false" />
+            <element signature="e#6866#7215#0" expanded="false" />
+            <element signature="e#7938#8518#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -519,10 +536,15 @@
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
             <element signature="n#!!block;n#Line#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#2374#2505#0" expanded="false" />
+            <element signature="e#2540#2673#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#5440#6017#0" expanded="false" />
-            <element signature="e#6845#7194#0" expanded="false" />
+            <element signature="e#5461#6038#0" expanded="false" />
+            <element signature="e#6866#7215#0" expanded="false" />
+            <element signature="e#7938#8518#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,10 +569,15 @@
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
             <element signature="n#!!block;n#Line#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#2374#2505#0" expanded="false" />
+            <element signature="e#2540#2673#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#5440#6017#0" expanded="false" />
-            <element signature="e#6845#7194#0" expanded="false" />
+            <element signature="e#5461#6038#0" expanded="false" />
+            <element signature="e#6866#7215#0" expanded="false" />
+            <element signature="e#7938#8518#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -609,18 +636,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="322" column="16" lean-forward="false" selection-start-line="322" selection-start-column="16" selection-end-line="322" selection-end-column="16" />
+        <state relative-caret-position="698">
+          <caret line="362" column="41" lean-forward="false" selection-start-line="362" selection-start-column="41" selection-end-line="362" selection-end-column="41" />
           <folding>
             <element signature="n#!!block;n#mouseClicked#0" expanded="false" />
             <element signature="n#!!block;n#mousePressed#0" expanded="false" />
             <element signature="n#!!block;n#mouseReleased#0" expanded="false" />
             <element signature="n#!!block;n#startPoint#0" expanded="false" />
             <element signature="n#!!block;n#Line#0" expanded="false" />
+            <element signature="n#!!block;n#Ball#0" expanded="false" />
+            <element signature="e#1395#1557#0" expanded="false" />
+            <element signature="e#2374#2505#0" expanded="false" />
+            <element signature="e#2540#2673#0" expanded="false" />
             <element signature="n#!!block;n#SideArc#0" expanded="false" />
             <element signature="n#!!block;n#BgCircle#0" expanded="false" />
-            <element signature="e#5440#6017#0" expanded="false" />
-            <element signature="e#6845#7194#0" expanded="false" />
+            <element signature="e#5461#6038#0" expanded="false" />
+            <element signature="e#6866#7215#0" expanded="false" />
+            <element signature="e#7938#8518#0" expanded="false" />
           </folding>
         </state>
       </provider>
