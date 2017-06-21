@@ -8,9 +8,17 @@ function draw() {
     crosses[i].init()
     crosses[i].update()
   }
-  for (var i in tris) {
-    tris[i].init()
-    tris[i].update()
+  for (var i in triRed) {
+    triRed[i].init()
+    triRed[i].update()
+  }
+  for (var i in triBlue) {
+    triBlue[i].init()
+    triBlue[i].update()
+  }
+  for (var i in triGreen) {
+    triGreen[i].init()
+    triGreen[i].update()
   }
   ball.init()
   ball.update()
@@ -336,15 +344,46 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
   this.colorBule = random(2) > 1 ? this.blue : this.darkBlue
   this.color = null
   this.hit = false
+  this.goal = {}
   this.init = function () {
+    this.center.x = (this.pos.x1 + this.pos.x2 + this.pos.x3) / 3
+    this.center.y = (this.pos.y1 + this.pos.y2 + this.pos.y3) / 3
     if (fillcolor === 'red') {
       this.color = this.colorRed
+      var hit = collideCircleCircle(this.center.x, this.center.y, 15, ball.pos.x, ball.pos.y, ballSize)
+      if (hit) {
+        this.hit = true
+      }
+      if (this.hit) {
+        for (var i in triRed) {
+          triRed[i].go()
+        }
+      }
     }
     else if (fillcolor === 'blue') {
       this.color = this.colorBule
+      this.color = this.colorRed
+      var hit = collideCircleCircle(this.center.x, this.center.y, 15, ball.pos.x, ball.pos.y, ballSize)
+      if (hit) {
+        this.hit = true
+      }
+      if (this.hit) {
+        for (var i in triBlue) {
+          triBlue[i].go()
+        }
+      }
     }
     else if (fillcolor === 'green') {
       this.color = this.colorGreen
+      var hit = collideCircleCircle(this.center.x, this.center.y, 15, ball.pos.x, ball.pos.y, ballSize)
+      if (hit) {
+        this.hit = true
+      }
+      if (this.hit) {
+        for (var i in triGreen) {
+          triGreen[i].go()
+        }
+      }
     }
     push()
     translate(this.pos.x1, this.pos.y1)
@@ -352,43 +391,26 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
     fill(this.color)
     triangle(0, 0, this.pos.x2 - this.pos.x1, this.pos.y2 -this.pos.y1, this.pos.x3-this.pos.x1, this.pos.y3-this.pos.y1)
     pop()
-    this.center.x = (this.pos.x1 + this.pos.x2 + this.pos.x3) / 3
-    this.center.y = (this.pos.y1 + this.pos.y2 + this.pos.y3) / 3
   }
   this.update = function () {
-    // 弹球与三角碰撞检测
-    if (collideCircleCircle(ball.pos.x, ball.pos.y, ballSize, this.center.x, this.center.y, 20)) {
-      // if(ball.pos.x < this.center.x && ball.pos.y > this.center.y) {
-      //   console.log('左上')
-      //   ball.bounce('left')
-      // }
-      // else if(ball.pos.x < this.center.x && ball.pos.y < this.center.y) {
-      //   ball.bounce('right')
-      // }
-      // else if(ball.pos.x > this.center.x && ball.pos.y > this.center.y) {
-      //   ball.bounce('left')
-      // }
-      // else if(ball.pos.x > this.center.x && ball.pos.y < this.center.y) {
-      //   ball.bounce('left')
-      // }
-
-      // if (ball.pos.x < this.center.x) {
-      //   this.hitFrom = 'right'
-      // }
-      // else if (ball.pos.x > this.center.x) {
-      //   this.hitFrom = 'left'
-      // }
-    }
-    for(var i = 0; i < tris.length; i++) {
-      if(this.center.x !== tris[i].center.x) {
-        this.hit = collideCircleCircle(this.center.x, this.center.y, 10, tris[i].center.x, tris[i].center.y, 15)
-      }
-    }
-    if(this.hit) {
-      console.log('hit')
+    if (this.hit) {
+      this.go()
     }
   }
-  this.bounce = function () {
-
+  this.go = function () {
+    // var power = {
+    //   x1: this.goal.x1 - this.pos.x1,
+    //   y1: this.goal.y1 - this.pos.y1,
+    //   x2: this.goal.x2 - this.pos.x2,
+    //   y2: this.goal.y2 - this.pos.y2,
+    //   x3: this.goal.x3 - this.pos.x3,
+    //   y3: this.goal.y3 - this.pos.y3
+    // }
+    this.pos.x1 += this.goal.x
+    this.pos.x2 += this.goal.x
+    this.pos.x3 += this.goal.x
+    this.pos.y1 += this.goal.y
+    this.pos.y2 += this.goal.y
+    this.pos.y3 += this.goal.y
   }
 }

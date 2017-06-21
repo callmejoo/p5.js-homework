@@ -1,5 +1,5 @@
 var ball, ballimg, sidearc, crosses = [], ballLine, trace = []
-var poly, tris = []
+var poly, triRed = [], triBlue = [], triGreen = [], trisPath = {}
 var ballSize = 50, ballSpeed
 var mic
 var backToOri
