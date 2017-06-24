@@ -336,6 +336,7 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
     x: null,
     y: null
   }
+  this.stat = {}
   this.red = color(252, 102, 116)
   this.gold = color(248, 203, 132)
   this.green = color(57, 255, 151)
@@ -346,102 +347,137 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
   this.colorGreen = random(2) > 1 ? this.darkGreen : this.green
   this.colorBule = random(2) > 1 ? this.blue : this.darkBlue
   this.color = null
-  this.hit = false
+  this.power = {x: 0, y: 0}
+  this.hit = {}
+  this.tanDir = -2  // 反弹方向
   this.goal = {}
   this.init = function () {
     this.center.x = (this.pos.x1 + this.pos.x2 + this.pos.x3) / 3
     this.center.y = (this.pos.y1 + this.pos.y2 + this.pos.y3) / 3
     if (fillcolor === 'red') {
       this.color = this.colorRed
-      var hit = collideCircleCircle(this.center.x, this.center.y, 15, ball.pos.x, ball.pos.y, ballSize)
-      if (hit) {
-        this.hit = true
+      if(this.stat.boom === false) {
+        if (collideCircleCircle(this.center.x, this.center.y, 40, ball.pos.x, ball.pos.y, ballSize)) {
+          for (var i in triRed) {
+            triRed[i].stat.boom = true
+            triRed[i].hit.stat = true
+          }
+        }
       }
-      if (this.hit) {
+      if (this.hit.stat) {
         for (var i in triRed) {
-          triRed[i].go()
+          if (triRed[i].hit.stat){
+            triRed[i].go()
+          }
+          if (triRed[i].center.x <= 30) {
+            triRed[i].freeGo('left')
+          }
+          if (width - triRed[i].center.x  <= 30) {
+            triRed[i].freeGo('right')
+          }
+          if (triRed[i].center.y <= 30) {
+            triRed[i].freeGo('top')
+          }
+          if (height - triRed[i].center.y <= 30) {
+            triRed[i].freeGo('bottom')
+          }
         }
       }
     }
-    else if (fillcolor === 'blue') {
+    if (fillcolor === 'blue') {
       this.color = this.colorBule
-      this.color = this.colorRed
-      var hit = collideCircleCircle(this.center.x, this.center.y, 15, ball.pos.x, ball.pos.y, ballSize)
-      if (hit) {
-        this.hit = true
+      if(this.stat.boom === false) {
+        if (collideCircleCircle(this.center.x, this.center.y, 40, ball.pos.x, ball.pos.y, ballSize)) {
+          for (var i in triBlue) {
+            triBlue[i].stat.boom = true
+            triBlue[i].hit.stat = true
+          }
+        }
       }
-      if (this.hit) {
+      if (this.hit.stat) {
         for (var i in triBlue) {
-          triBlue[i].go()
+          if (triBlue[i].hit.stat){
+            triBlue[i].go()
+          }
+          if (triBlue[i].center.x <= 30) {
+            triBlue[i].freeGo('left')          }
+          if (width - triBlue[i].center.x  <= 30) {
+            triBlue[i].freeGo('right')
+          }
+          if (triBlue[i].center.y <= 30) {
+            triBlue[i].freeGo('top')
+          }
+          if (height - triBlue[i].center.y <= 30) {
+            triBlue[i].freeGo('bottom')
+          }
         }
       }
     }
-    else if (fillcolor === 'green') {
+    if (fillcolor === 'green') {
       this.color = this.colorGreen
-      var hit = collideCircleCircle(this.center.x, this.center.y, 15, ball.pos.x, ball.pos.y, ballSize)
-      if (hit) {
-        this.hit = true
+      if(this.stat.boom === false) {
+        if (collideCircleCircle(this.center.x, this.center.y, 40, ball.pos.x, ball.pos.y, ballSize)) {
+          for (var i in triGreen) {
+            triGreen[i].stat.boom = true
+            triGreen[i].hit.stat = true
+          }
+        }
       }
-      if (this.hit) {
+      if (this.hit.stat) {
         for (var i in triGreen) {
-          triGreen[i].go()
+          if (triGreen[i].hit.stat){
+            triGreen[i].go()
+          }
+          if (triGreen[i].center.x <= 30) {
+            triGreen[i].freeGo('left')
+          }
+          if (width - triGreen[i].center.x  <= 30) {
+            triGreen[i].freeGo('right')
+          }
+          if (triGreen[i].center.y <= 30) {
+            triGreen[i].freeGo('top')
+          }
+          if (height - triGreen[i].center.y <= 30) {
+            triGreen[i].freeGo('bottom')
+          }
         }
       }
     }
     push()
-    translate(this.pos.x1, this.pos.y1)
     stroke(this.color)
     fill(this.color)
-    triangle(0, 0, this.pos.x2 - this.pos.x1, this.pos.y2 -this.pos.y1, this.pos.x3-this.pos.x1, this.pos.y3-this.pos.y1)
+    triangle(this.pos.x1, this.pos.y1, this.pos.x2, this.pos.y2, this.pos.x3, this.pos.y3)
     pop()
   }
   this.update = function () {
     // 碰壁检测
-    if (this.pos.x >= width - this.size / 2) {
-      this.bounce('right')
-    }
-    if (this.pos.x <= this.size / 2) {
-      this.bounce('left')
-    }
-    if (this.pos.y <= this.size / 2) {
-      this.bounce('top')
-    }
-    if (this.pos.y >= height - this.size / 2) {
-      this.bounce('bottom')
-    }
-    if (this.hit) {
-      this.go()
-    }
+
   }
   this.go = function () {
-    this.pos.x1 += this.goal.x
-    this.pos.x2 += this.goal.x
-    this.pos.x3 += this.goal.x
-    this.pos.y1 += this.goal.y
-    this.pos.y2 += this.goal.y
-    this.pos.y3 += this.goal.y
+    this.pos.x1 += this.goal.x + this.power.x
+    this.pos.x2 += this.goal.x + this.power.x
+    this.pos.x3 += this.goal.x + this.power.x
+    this.pos.y1 += this.goal.y + this.power.y
+    this.pos.y2 += this.goal.y + this.power.y
+    this.pos.y3 += this.goal.y + this.power.y
   }
-  // 边缘碰撞
-  // this.bounce = function (side) {
-  //   var power = {x:null,y: null}
-  //   if (side === 'top') {
-  //     power.x = 0
-  //     power.y = 1
-  //   } else if (side === 'bottom') {
-  //     power.x = 0
-  //     power.y = -1
-  //   } else if (side === 'left') {
-  //     power.x = -1
-  //     power.y = 0
-  //   } else if (side === 'right') {
-  //     power.x = -1
-  //     power.y = 0
-  //   }
-  //   var oppo = this.speed.copy()
-  //   oppo.rotate(PI)
-  //   var angle = p5.Vector.angleBetween(power, oppo)
-  //   var len = Math.cos(angle) * this.speed.mag() * 2
-  //   power.setMag(len)
-  //   this.speed.add(power)
-  // }
+  // 三角形到达边缘反弹
+  this.freeGo = function (side) {
+    if (side === 'top') {
+      this.power.x = this.goal.x * this.tanDir
+      this.power.y = this.goal.y * this.tanDir
+    }
+    if (side === 'bottom') {
+      this.power.x = this.goal.x * this.tanDir
+      this.power.y = this.goal.y * this.tanDir
+    }
+    if (side === 'left') {
+      this.power.x = this.goal.x * this.tanDir
+      this.power.y = this.goal.y * this.tanDir
+    }
+    if (side === 'right') {
+      this.power.x = this.goal.x * this.tanDir
+      this.power.y = this.goal.y * this.tanDir
+    }
+  }
 }

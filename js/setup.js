@@ -143,12 +143,18 @@ function setup() {
 
   // 三角形飞行速度
   for (var i in triRed) {
-    triRed[i].goal = {x: random(-1, 1), y: random(-1, 1)}
+    triRed[i].goal = {x: random(-0.1, 0.1), y: random(-0.1, 0.1)}
+    triRed[i].stat = {boom: false}
+    triRed[i].hit = {stat: false}
   }
   for (var i in triBlue) {
-    triBlue[i].goal = {x: random(-1, 1), y: random(-1, 1)}
+    triBlue[i].goal = {x: random(-0.1, 0.1), y: random(-0.1, 0.1)}
+    triBlue[i].stat = {boom: false}
+    triBlue[i].hit = {stat: false}
   }
   for (var i in triGreen) {
-    triGreen[i].goal = {x: random(-1, 1), y: random(-1, 1)}
+    triGreen[i].goal = {x: random(-0.5, 0.5), y: random(-0.5, 0.5)}
+    triGreen[i].stat = {boom: false}
+    triGreen[i].hit = {stat: false}
   }
 }
