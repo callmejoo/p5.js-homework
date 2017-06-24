@@ -88,6 +88,9 @@ function Ball (x, y, size) {
     var v = createVector(this.pos.x, this.pos.y)
     this.speedDown(1)   // 保持摩擦减速
     this.pos.add(this.speed)
+    if(mic.getLevel() > voiceLevel) {
+      this.history = []
+    }
     if (this.dragState === true) {
       this.moveTo(mouseX, mouseY)
     }
@@ -393,19 +396,24 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
     pop()
   }
   this.update = function () {
+    // 碰壁检测
+    if (this.pos.x >= width - this.size / 2) {
+      this.bounce('right')
+    }
+    if (this.pos.x <= this.size / 2) {
+      this.bounce('left')
+    }
+    if (this.pos.y <= this.size / 2) {
+      this.bounce('top')
+    }
+    if (this.pos.y >= height - this.size / 2) {
+      this.bounce('bottom')
+    }
     if (this.hit) {
       this.go()
     }
   }
   this.go = function () {
-    // var power = {
-    //   x1: this.goal.x1 - this.pos.x1,
-    //   y1: this.goal.y1 - this.pos.y1,
-    //   x2: this.goal.x2 - this.pos.x2,
-    //   y2: this.goal.y2 - this.pos.y2,
-    //   x3: this.goal.x3 - this.pos.x3,
-    //   y3: this.goal.y3 - this.pos.y3
-    // }
     this.pos.x1 += this.goal.x
     this.pos.x2 += this.goal.x
     this.pos.x3 += this.goal.x
@@ -413,4 +421,27 @@ function Triangle (x1, y1, x2, y2, x3, y3, fillcolor, degree) {
     this.pos.y2 += this.goal.y
     this.pos.y3 += this.goal.y
   }
+  // 边缘碰撞
+  // this.bounce = function (side) {
+  //   var power = {x:null,y: null}
+  //   if (side === 'top') {
+  //     power.x = 0
+  //     power.y = 1
+  //   } else if (side === 'bottom') {
+  //     power.x = 0
+  //     power.y = -1
+  //   } else if (side === 'left') {
+  //     power.x = -1
+  //     power.y = 0
+  //   } else if (side === 'right') {
+  //     power.x = -1
+  //     power.y = 0
+  //   }
+  //   var oppo = this.speed.copy()
+  //   oppo.rotate(PI)
+  //   var angle = p5.Vector.angleBetween(power, oppo)
+  //   var len = Math.cos(angle) * this.speed.mag() * 2
+  //   power.setMag(len)
+  //   this.speed.add(power)
+  // }
 }

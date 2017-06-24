@@ -141,14 +141,14 @@ function setup() {
   triGreen.push(new Triangle(521.6,28.8,561.6,51.9,521.6,75, 'green'))
   triGreen.push(new Triangle(561.6,51.9,521.6,28.8,561.6,5.7, 'green'))
 
-  // 三角形飞行路径
+  // 三角形飞行速度
   for (var i in triRed) {
-    triRed[i].goal = {x: random(-5, 5), y: random(-5, 5)}
+    triRed[i].goal = {x: random(-1, 1), y: random(-1, 1)}
   }
   for (var i in triBlue) {
-    triBlue[i].goal = {x: random(-5, 5), y: random(-5, 5)}
+    triBlue[i].goal = {x: random(-1, 1), y: random(-1, 1)}
   }
   for (var i in triGreen) {
-    triGreen[i].goal = {x: random(-5, 5), y: random(-5, 5)}
+    triGreen[i].goal = {x: random(-1, 1), y: random(-1, 1)}
   }
 }
